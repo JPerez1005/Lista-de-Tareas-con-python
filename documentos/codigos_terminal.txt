@@ -1,0 +1,8 @@
+python -m venv entorno_virtual
+entorno_virtual\Scripts\activate
+pip list
+pip install SQLAlchemy
+pip install pymysql
+pip install streamlit
+pip freeze > requirements.txt
+streamlit run app.py
