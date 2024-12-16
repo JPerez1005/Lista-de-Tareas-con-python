@@ -29,5 +29,4 @@ def eliminar_tabla_tareas():
     Base.metadata.drop_all(engine, tables=[Tarea.__table__])
     print("Tabla de tareas eliminada")
 
-# Llamar a la función para eliminar la tabla
 # eliminar_tabla_tareas()

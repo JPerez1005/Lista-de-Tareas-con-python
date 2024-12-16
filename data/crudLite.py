@@ -10,7 +10,6 @@ session = Session()
 if session:
     print("Session iniciada")
 
-# Función para agregar una nueva tarea (Adaptada)
 def agregar_tarea(titulo, descripcion=None, estado=False, fecha_vencimiento=None, fecha_creacion=None):
     with Session() as session:
         nueva_tarea = Tarea(
@@ -23,7 +22,6 @@ def agregar_tarea(titulo, descripcion=None, estado=False, fecha_vencimiento=None
         session.add(nueva_tarea)
         session.commit()
 
-# Función para consultar todas las tareas (Adaptada)
 def obtener_tareas_filtradas(busqueda=""):
     with Session() as session:
         if busqueda:
@@ -35,7 +33,6 @@ def obtener_tareas_filtradas(busqueda=""):
             tareas = session.query(Tarea).all()
         return tareas
 
-# Función para eliminar una tarea (Adaptada)
 def eliminar_tarea(id_tarea):
     with Session() as session:
         tarea = session.query(Tarea).filter(Tarea.id == id_tarea).first()
@@ -43,7 +40,6 @@ def eliminar_tarea(id_tarea):
             session.delete(tarea)
             session.commit()
 
-# Función para actualizar una tarea (Adaptada)
 def actualizar_tarea(id_tarea, nuevo_titulo=None, nueva_descripcion=None, nuevo_estado=None, nueva_fecha_vencimiento=None):
     with Session() as session:
         tarea = session.query(Tarea).filter(Tarea.id == id_tarea).first()
